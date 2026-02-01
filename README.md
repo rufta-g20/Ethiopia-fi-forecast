@@ -10,15 +10,13 @@ ethiopia-fi-forecast/
 │   └── unittests.yml
 ├── data/
 │   ├── raw/                    # Original Excel starter datasets
-│   └── processed/              # Enriched and cleaned CSV data for modeling
-├── notebooks/                  # Data exploration and enrichment logic
-│   └── 01_data_exploration_and_enrichment.ipynb
-├── src/                        # Source code for data processing
-├── dashboard/                  # Streamlit visualization app
-├── tests/                      # Unit tests
-├── models/                     # Saved forecasting models
-├── reports/                    # Analysis figures and documentation
-├── data_enrichment_log.md      # Detailed log of added data points
+│   └── processed/              # Enriched and cleaned CSV data
+├── notebooks/                  # Analysis logic
+│   ├── 01_data_exploration_and_enrichment.ipynb
+│   └── 02_exploratory_data_analysis.ipynb
+├── reports/                    # Key Findings
+│   └── eda_insights.md         # Summary of 5 key insights from Task 2
+├── data_enrichment_log.md      # Detailed log of added data points (Task 1)
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Project overview
 
@@ -40,19 +38,18 @@ cd ethiopia-fi-forecast
 
 ```
 
-2. **Create the Environment:**
+2. **Setup Environment:**
 ```bash
 conda create -n kaim_week10 python=3.11 -y
 conda activate kaim_week10
-
-```
-
-3. **Install Dependencies:**
-```bash
 pip install -r requirements.txt
 
 ```
 
-### Data Enrichment (Task 1)
+### Task 1: Data Enrichment
 
 The primary dataset has been enriched with 2024 Findex data and recent infrastructure milestones. All changes are documented in `data_enrichment_log.md`.
+
+### Task 2: Exploratory Data Analysis
+
+Analyzed the "Access-Usage Paradox" where mobile money adoption is outpacing traditional account growth. Findings on gender gaps and event-driven spikes are documented in `reports/eda_insights.md`.

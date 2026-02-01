@@ -5,14 +5,16 @@ numpy
 # Visualization
 matplotlib
 seaborn
+plotly
 
 # Statistical Analysis
+scipy
 statsmodels
 
 # Notebook environment
 ipykernel
 
-plotly
 streamlit
 python-dotenv
 openpyxl
+nbformat
