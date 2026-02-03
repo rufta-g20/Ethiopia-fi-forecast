@@ -14,7 +14,11 @@ statsmodels
 # Notebook environment
 ipykernel
 
+# For Deep Learning
+scikit-learn
+
 streamlit
 python-dotenv
 openpyxl
 nbformat
+networkx

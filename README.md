@@ -10,13 +10,15 @@ ethiopia-fi-forecast/
 │   └── unittests.yml
 ├── data/
 │   ├── raw/                    # Original Excel starter datasets
-│   └── processed/              # Enriched and cleaned CSV data
+│   └── processed/              # Enriched and cleaned CSV data (ethiopia_fi_enriched.csv)
 ├── notebooks/                  # Analysis logic
 │   ├── 01_data_exploration_and_enrichment.ipynb
-│   └── 02_exploratory_data_analysis.ipynb
+│   ├── 02_exploratory_data_analysis.ipynb
+│   └── 03_event_impact_modeling.ipynb  # Task 3: Impact Matrix logic
 ├── reports/                    # Key Findings
-│   └── eda_insights.md         # Summary of 5 key insights from Task 2
-├── data_enrichment_log.md      # Detailed log of added data points (Task 1)
+│   ├── eda_insights.md         # Task 2: Summary of 5 key insights
+│   └── impact_methodology.md   # Task 3: Association Matrix & Validation
+├── data_enrichment_log.md      # Task 1: Detailed log of added data points
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Project overview
 
@@ -53,3 +55,7 @@ The primary dataset has been enriched with 2024 Findex data and recent infrastru
 ### Task 2: Exploratory Data Analysis
 
 Analyzed the "Access-Usage Paradox" where mobile money adoption is outpacing traditional account growth. Findings on gender gaps and event-driven spikes are documented in `reports/eda_insights.md`.
+
+### Task 3: Event Impact Modeling
+
+Developed an Association Matrix to quantify how events like the Telebirr launch and Fayda ID rollout drive indicators. Validated the model against 2021-2024 data, establishing a 1.58pp growth scaler per impact point. Findings are documented in `reports/impact_methodology.md`.
