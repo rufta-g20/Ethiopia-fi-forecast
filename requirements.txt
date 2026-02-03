@@ -22,3 +22,4 @@ python-dotenv
 openpyxl
 nbformat
 networkx
+prophet
