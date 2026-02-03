@@ -1,20 +1,26 @@
 # Data Enrichment Log - Task 1
-**Analyst:** Rufta  
+
+**Analyst:** Rufta
 **Project:** Ethiopia Financial Inclusion Forecasting
 
 ## Summary of Changes
-This log documents the additional observations, events, and impact links added to the unified dataset to bridge data gaps identified during the initial exploration, specifically targeting the 2024-2025 period to improve 2026-2027 forecasting.
+
+This log documents the expansion of the unified dataset with **8 new records** (1 observation, 3 events, and 4 impact links). These additions specifically target the 2021-2024 period to provide a stronger historical baseline for the 2026-2027 forecasts, focusing on the infrastructure drivers of financial inclusion.
 
 ## New Records Added
 
-| Date Added | Type | Indicator/Event | Value/Magnitude | Source URL | Confidence | Note |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 2026-02-01 | Observation | Smartphone Ownership (2023) | 43% | [BII Telecom Report](https://assets.bii.co.uk/wp-content/uploads/2024/10/09105903/BII-Impact-of-investment-in-the-Ethiopian-telecoms-market_2024.pdf) | High | Critical for modeling the transition from basic mobile money to app-based usage. |
-| 2026-02-01 | Event | National ID (Fayda) Rollout Expansion | N/A | [NID Ethiopia](https://id.et/) | Medium | Key milestone for reducing KYC friction in account opening. |
-| 2026-02-01 | Impact Link | Fayda Rollout -> Account Ownership | Medium (Positive) | Internal Analysis | High | Models the relationship between infrastructure (ID) and the ACCESS pillar. |
+| Date Added | Type | Indicator/Event Code | Value/Magnitude | Source | Confidence | Note |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-02-03 | Observation | `INF_SMP_OWN` | 43.0% | [suspicious link removed] | High | Hardware bottleneck test: Baseline for app-based usage. |
+| 2026-02-03 | Event | `EVT_TELEBIRR` | N/A | Ethio Telecom | High | Primary usage shock; trigger for mobile money spikes. |
+| 2026-02-03 | Event | `EVT_MPESA` | N/A | Safaricom | High | Leading indicator for competitive transaction growth. |
+| 2026-02-03 | Event | `EVT_FAYDA` | N/A | NID Ethiopia | Medium | Catalyst for future reduction in bank KYC friction. |
+| 2026-02-03 | Impact Link | `EVT_TELEBIRR` → `ACC_MM` | High (Positive) | Internal Analysis | High | Immediate 0-month lag impact on usage penetration. |
+| 2026-02-03 | Impact Link | `EVT_FAYDA` → `ACC_OWN` | High (Positive) | Internal Analysis | High | Long-term 12-month lag impact on the Access pillar. |
 
-## Insights from Exploration
-- **Schema Alignment:** Observations were mapped to existing pillars like `ACCESS` and `USAGE` (matching the uppercase format found in the raw data).
-- **Temporal Gap:** While the dataset contains targets up to 2030, actual observations were sparse for 2024. Added data points fill this "recency gap."
-- **Data Structure:** Confirmed that `record_type` includes observations, impact_links, events, and targets. 
-- **Pillar Logic:** Followed the instruction to keep `pillar` empty (NaN) for events to ensure they can influence multiple indicators through `impact_links` without being siloed into a single category.
+## Insights from Exploration & Enrichment
+
+* **Indicator Specificity:** Added a new infrastructure code `INF_SMP_OWN` to distinguish smartphone penetration from general mobile penetration (`ACC_MOBILE_PEN`), as the former is required for advanced digital payment usage.
+* **Impact Link Modeling:** Established a **12-month lag** for the Fayda National ID impact. This acknowledges that while ID issuance is fast, the downstream effect on bank account ownership requires policy alignment and retail bank implementation.
+* **Pillar Consistency:** Maintained the uppercase pillar format (`ACCESS`, `USAGE`) for observations to ensure seamless `pivot_table` operations in the upcoming Task 3.
+* **Data Integrity:** The dataset shape has increased from **57 to 65 records**, providing enough data points to begin the **Task 2: Exploratory Data Analysis**.
