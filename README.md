@@ -8,6 +8,8 @@ Selam Analytics has been engaged by a consortium of stakeholders (National Bank 
 ethiopia-fi-forecast/
 ├── .github/workflows/          # CI/CD pipelines
 │   └── unittests.yml
+├── dashboard/
+│   └── app.py                  # Task 5: Streamlit Dashboard Application
 ├── data/
 │   ├── raw/                    # Original Excel starter datasets
 │   └── processed/              # Enriched CSV data (ethiopia_fi_enriched.csv)
@@ -66,3 +68,14 @@ Developed an Association Matrix to quantify how events like the Telebirr launch 
 ### Task 4: Forecasting Access and Usage
 
 Deployed Event-Augmented Prophet models to forecast inclusion through 2027. Established baseline, optimistic, and pessimistic scenarios, projecting a range of 62.3% to 66.2% for account ownership by end-of-2027. Documented in `reports/forecast_interpretation.md`.
+
+### Task 5: Dashboard Development
+
+Created an interactive Streamlit dashboard allowing stakeholders to visualize trends, event impacts, and toggle between inclusion scenarios.
+
+### Running the Dashboard Locally
+
+Navigate to the project root and run:
+```bash
+streamlit run dashboard/app.py
+```
